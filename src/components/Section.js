@@ -1,29 +1,35 @@
 import React from 'react'
 import styled from 'styled-components'
+import Fade from 'react-reveal/Fade';
+import '../index.css';
 
 function Section(props) {
-  return (
-    <Wrap bgimage = {props.backgroundImg}>
-        <ItemText>
-            <h1>{props.title}</h1>
-            <p>{props.description}</p>
-        </ItemText>
-        <Button>
-            <ButtonGroup>
-                <LeftButton>
-                    {props.leftBtnText}
-                </LeftButton>
-                {props.rightBtnText &&
-                    <RightButton>
-                        {props.rightBtnText}
-                    </RightButton>
-                }
-            </ButtonGroup>
-            <DowmArrow src="/images/down-arrow.svg"></DowmArrow>
-        </Button>
+    return (
+        <Wrap bgimage={props.backgroundImg}>
+            <Fade bottom>
+                <ItemText>
+                    <h1>{props.title}</h1>
+                    <p>{props.description}</p>
+                </ItemText>
+            </Fade>
+            <Button>
+                <Fade bottom>
+                    <ButtonGroup>
+                        <LeftButton>
+                            {props.leftBtnText}
+                        </LeftButton>
+                        {props.rightBtnText &&
+                            <RightButton>
+                                {props.rightBtnText}
+                            </RightButton>
+                        }
+                    </ButtonGroup>
+                </Fade> 
+                <DowmArrow src="/images/down-arrow.svg"></DowmArrow>
+            </Button>
 
-    </Wrap>
-  )
+        </Wrap>
+    )
 }
 
 export default Section
@@ -58,15 +64,15 @@ const LeftButton = styled.div`
     height: 40px;
     width: 256px;
     color: white;
+    font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 100px;
+    border-radius: 4px;
     opacity: 0.85;
-    text-transform: uppercase;
-    font-size: 12px;
+    font-size: 15px;
     cursor: pointer;
-    margin: 8px;
+    margin: 12px;
 `
 
 const RightButton = styled(LeftButton)`
