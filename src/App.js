@@ -207,7 +207,3 @@ const Container2 = styled.div`
     height: 100vh;
     filter: ${props => props.c ? "blur(5px)" : "blur(0px)"};
 `
-const Background = styled.div`
-    backdrop-filter: blur(5px);
-    background-color: rgba(0,0,0,0.5);
-`
